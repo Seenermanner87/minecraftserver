@@ -32,6 +32,8 @@
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+      user-select: none;
     }
 
     .server-card:hover {
@@ -47,6 +49,14 @@
       text-shadow: 1px 1px 4px #000;
     }
 
+    .copied-tooltip {
+      font-size: 0.9rem;
+      color: #00ff00;
+      margin-top: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
     footer {
       position: absolute;
       bottom: 20px;
@@ -57,10 +67,26 @@
 </head>
 <body>
   <h1>Welcome to ZachMP</h1>
-  <div class="server-card">
+  <div class="server-card" onclick="copyIP()">
     <div>Server IP:</div>
-    <div class="server-ip">ZachMP.aternos.me</div>
+    <div class="server-ip" id="server-ip">ZachMP.aternos.me</div>
+    <div class="copied-tooltip" id="tooltip">Copied!</div>
   </div>
   <footer>Enjoy the game!</footer>
+
+  <script>
+    function copyIP() {
+      const ip = document.getElementById('server-ip').textContent;
+      navigator.clipboard.writeText(ip).then(() => {
+        const tooltip = document.getElementById('tooltip');
+        tooltip.style.opacity = '1';
+        setTimeout(() => {
+          tooltip.style.opacity = '0';
+        }, 1000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+  </script>
 </body>
 </html>
