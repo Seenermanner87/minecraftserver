@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZachMP Server</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1d1f3a, #2a2d5b);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px #00000080;
+    }
+
+    .server-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .server-card:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .server-ip {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      font-weight: 700;
+      color: #ffd700;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.85rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to ZachMP</h1>
+  <div class="server-card">
+    <div>Server IP:</div>
+    <div class="server-ip">ZachMP.aternos.me</div>
+  </div>
+  <footer>Enjoy the game!</footer>
+</body>
+</html>
